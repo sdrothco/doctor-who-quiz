@@ -1,0 +1,130 @@
+/* apply a natural box layout model to all elements */
+/* line 20, ../sass/main.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 27, ../sass/main.scss */
+body {
+  width: 600px;
+  margin: 0 auto;
+  background: black;
+  background: url(../images/tardis_wallpaper_by_spruffen.jpg) no-repeat fixed top center white;
+  background-size: cover;
+  color: #5a91cc;
+  font-family: Helvetica;
+}
+
+/* line 39, ../sass/main.scss */
+.quiz-box {
+  margin: 50px auto;
+  width: 500px;
+  height: 550px;
+  background: black;
+  border-radius: 10px;
+}
+
+/* line 47, ../sass/main.scss */
+.title img {
+  display: block;
+  border-radius: 10px;
+  width: 500px;
+}
+
+/* line 53, ../sass/main.scss */
+.question {
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+/* line 59, ../sass/main.scss */
+.button {
+  display: inline-block;
+  text-decoration: none;
+  height: 50px;
+  width: 480px;
+  margin: 5px 10px;
+  padding: 10px;
+  color: black;
+  text-align: center;
+  font: bold 1.2em "Helvetica Neue", Helvetica, Geneva, sans-serif;
+  background: #366dae;
+  background: -webkit-linear-gradient(top, #9dbce0, #122439);
+  background: -moz-linear-gradient(top, #9dbce0, #122439);
+  background: -o-linear-gradient(top, #9dbce0, #122439);
+  background: -ms-linear-gradient(top, #9dbce0, #122439);
+  background: linear-gradient(top, #9dbce0, #122439);
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 81, ../sass/main.scss */
+.button:hover {
+  background: #5f4a8f;
+  background: -webkit-linear-gradient(top, #a292c7, #271f3b);
+  background: -moz-linear-gradient(top, #a292c7, #271f3b);
+  background: -o-linear-gradient(top, #a292c7, #271f3b);
+  background: -ms-linear-gradient(top, #a292c7, #271f3b);
+  background: linear-gradient(top, #a292c7, #271f3b);
+}
+
+/* line 90, ../sass/main.scss */
+.quiz-progress, .num-correct {
+  padding-top: 18px;
+}
+
+/* line 93, ../sass/main.scss */
+.question-result {
+  text-align: center;
+  padding-top: 8px;
+  color: white;
+  font: bold 1.5em "Helvetica Neue", Helvetica, Geneva, sans-serif;
+}
+
+/* line 99, ../sass/main.scss */
+.num-correct {
+  text-align: right;
+}
+
+/* For the GRID SYSTEM */
+/* line 106, ../sass/main.scss */
+.container {
+  width: 500px;
+  overflow: hidden;
+}
+
+/* line 111, ../sass/main.scss */
+.column {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 121, ../sass/main.scss */
+.column-33 {
+  width: 33%;
+}
+
+/* line 125, ../sass/main.scss */
+.column-50 {
+  width: 49.5%;
+}
+
+/* line 129, ../sass/main.scss */
+.column-66 {
+  width: 66%;
+}
+
+/* line 133, ../sass/main.scss */
+.column-100 {
+  margin-right: 0 !important;
+  width: 100%;
+}
+
+/* line 138, ../sass/main.scss */
+.non-hidden-overflow {
+  overflow: visible;
+}
