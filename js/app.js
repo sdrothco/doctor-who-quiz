@@ -1,16 +1,18 @@
 $(document).ready(function(){
 	var quiz;
-	var questionArr = []; 
+	var questionArr = [];
 
-	loadQuestions();	
+	loadQuestions();
 	startNewQuiz();
 
+	// Clicked an answer button, process answer
 	$(".answers a").click(function(){
 
 		quiz.checkAnswer($(this).data("buttonnum"));
 		quiz.displayNextQuestion();
 	});
 
+	// Clicked the restart button, start a new quiz
 	$(".restart-button").click(function(){
 
 		$(this).hide();
@@ -20,60 +22,60 @@ $(document).ready(function(){
 		startNewQuiz();
 	});
 
-
+	// Reset everything and start a new quiz.
 	function startNewQuiz() {
-		quiz = new Quiz();
+		quiz = new Quiz( questionArr );
 		quiz.displayNextQuestion();
 		quiz.displayQuizStatus();
 	}
 
+	// Only load the questions into the objects once to improve performance.
 	function loadQuestions() {
+		questionArr.push( new Question( "Which of the following is NOT an enemy of the Doctor?",
+				["The Master", "Cybermen", "The Silence", "The Face of Boe"], 3) );
+		questionArr.push( new Question( "Which of the following is the Doctor’s home planet?",
+				["Skaro", "Raxacoricofallapatorius", "Gallifrey", "Earth"], 2) );
+		questionArr.push( new Question( "What is the Doctor called by the Daleks on their home planet?",
+				["The Oncoming Storm", "The Destroyer of Daleks", "The Time Lord Warrior", "Death"], 0) );
+		questionArr.push( new Question( "Who is known for saying \"Hello Sweetie\"?",
+				["Rose Tyler", "Donna Noble", "Amy Pond", "River Song"], 3) );
+		questionArr.push( new Question( "What does the eleventh Doctor say are cool?",
+				["Fezzes", "Stetsons", "Bow ties", "All of the above"], 3) );
+		questionArr.push( new Question( "Amy Pond is known as?",
+				["The girl who played with fire", "The clever girl", "The girl who waited",
+				"The impossible girl"], 2) );
+		questionArr.push( new Question( "What device in the TARDIS is broken that keeps it looking like a Police Box?",
+				["Chameleon circuit", "Cloaking device", "Disguise system", "None of the above"], 0) );
+		questionArr.push( new Question( "Which of these has the Doctor used his sonic screwdriver for?",
+				["Medical diagnostics and repair of organic parts", "Creating a spark to light a candle",
+				"Pushing heavy objects", "All of the above"], 3) );
 
+		//console.log(questionArr);
 	}
-
 });
 
 
 
-
-function Quiz () {
+// The Quiz object keeps the list of Questions, the current location in that 
+// list, how many have been answered correctly so far.  It handles all the display
+// of the quiz questions and answers.
+function Quiz ( questionArr ) {
 	this.numCorrect = 0;
 	this.currentQuestionIdx = -1;
+	this.questions = questionArr;	// Array of Question objects
 
-	this.questions = [];
-	this.questions.push( new Question( "Which of the following is NOT an enemy of the Doctor?",
-			["The Master", "Cybermen", "The Silence", "The Face of Boe"], 3) );
-	this.questions.push( new Question( "Which of the following is the Doctor’s home planet?",
-			["Skaro", "Raxacoricofallapatorius", "Gallifrey", "Earth"], 2) );
-	this.questions.push( new Question( "What is the Doctor called by the Daleks on their home planet?",
-			["The Oncoming Storm", "The Destroyer of Daleks", "The Time Lord Warrior", "Death"], 0) );
-	this.questions.push( new Question( "Who is known for saying \"Hello Sweetie\"?",
-			["Rose Tyler", "Donna Noble", "Amy Pond", "River Song"], 3) );
-	this.questions.push( new Question( "What does the eleventh Doctor say are cool?",
-			["Fezzes", "Stetsons", "Bow ties", "All of the above"], 3) );
-	this.questions.push( new Question( "Amy Pond is known as?",
-			["The girl who played with fire", "The clever girl", "The girl who waited",
-			"The impossible girl"], 2) );
-	this.questions.push( new Question( "What device in the TARDIS is broken that keeps it looking like a Police Box?",
-			["Chameleon circuit", "Cloaking device", "Disguise system", "None of the above"], 0) );
-	this.questions.push( new Question( "Which of these has the Doctor used his sonic screwdriver for?",
-			["Medical diagnostics and repair of organic parts", "Creating a spark to light a candle",
-			"Pushing heavy objects", "All of the above"], 3) );
-
-	console.log(this.questions);
-
+	// Displays the next question in the quiz.  If we reached
+	// the end, then the quiz results will be displayed.  Also 
+	// displays the current status of the users progress in the quiz.
 	this.displayNextQuestion = function () {
-		console.log("In displayNextQuestion.");
 		this.currentQuestionIdx++;
 		if (this.currentQuestionIdx < this.questions.length) {
 
 			var thisQ = this.questions[this.currentQuestionIdx];
 			$('.question').text(thisQ.getQuestion());
-			//this.questions[this.currentQuestionIdx].display();
 	
 			var arr = thisQ.getAnswers();
 			$('.answers a').each( function( index ) {
-				console.log("Index " + index + ": " + arr[index]);
 				$(this).text(arr[index]);
 			});
 
@@ -83,10 +85,12 @@ function Quiz () {
 		this.displayQuizStatus();
 	};
 
+	// Checks if the user's answer was right or not and calls the display function.
 	this.checkAnswer = function ( answerIdx ) {
 		this.displayResponse( this.questions[this.currentQuestionIdx].evalAnswer( answerIdx ) );
 	};
 
+	// Displays whether the user's answer was right or not.
 	this.displayResponse = function ( isRight ) {
 
 		$('.question-result').finish().show().css('visibility', 'visible');
@@ -108,6 +112,8 @@ function Quiz () {
 		}
 	};
 
+	// Show the current progress in the quiz - which question the user is on
+	// and how many they've gotten correct so far.
 	this.displayQuizStatus = function () {
 		if (this.currentQuestionIdx < this.questions.length) {
 			$('.quiz-progress').text("Q " + (this.currentQuestionIdx + 1) + " / " + this.questions.length);
@@ -117,6 +123,7 @@ function Quiz () {
 		$('.num-correct').text(this.numCorrect + " Correct");
 	};
 
+	// The user has reached the end of the quiz, so display how they did.
 	this.displayQuizResults = function () {
 		$('.answers').hide();
 		$('.question').text("Congratulations on completing the quiz!\n\n"

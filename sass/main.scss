@@ -1,10 +1,10 @@
 $content-width: 500px;	// the width of the quiz area
-$content-margin: 10px;
-$base-color: #5a91cc;
-$button-color: #366dae;
-$accent-color: #5f4a8f;
-$text-size: 1.5em;
-$text-font: "Helvetica Neue", Helvetica, Geneva, sans-serif;
+$content-margin: 10px;	// standard white space around content in quiz area
+$button-color: #366dae;	// slightly different base color for buttons
+$accent-color: #5f4a8f;	// accent color for hovering
+$base-color: #5a91cc;	// base text color
+$text-size: 1.5em;		// base text size
+$text-font: "Helvetica Neue", Helvetica, Geneva, sans-serif; // base font
 
 @mixin button-grad ($side, $light, $dark) {
     background: -webkit-linear-gradient($side, $light, $dark);
@@ -14,7 +14,12 @@ $text-font: "Helvetica Neue", Helvetica, Geneva, sans-serif;
     background: linear-gradient($side, $light, $dark);
 }
 
-
+@mixin border-radius-mixin ($radius) {
+    -webkit-border-radius: $radius;
+    -khtml-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
 
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
@@ -23,16 +28,13 @@ $text-font: "Helvetica Neue", Helvetica, Geneva, sans-serif;
     box-sizing: border-box;
  }
 
-
 body {
 	width: $content-width + 100px;
 	margin: 0 auto;
     background: url(../images/tardis_wallpaper_by_spruffen.jpg) no-repeat fixed top center #fff;
 	background-size: cover;
-
     color: $base-color;
     font-family: Helvetica;
-
 }
 
 .quiz-box {
@@ -40,13 +42,13 @@ body {
 	width: $content-width;
 	height: 550px;
 	background: black;
-	border-radius: 10px;
+	@include border-radius-mixin (10px);
     position: relative;
 }
 
 .title img {
 	display: block;
-	border-radius: 10px;
+	@include border-radius-mixin (10px);
 	width: $content-width;
 }
 
@@ -60,21 +62,16 @@ body {
 	@extend .question;
 	display: none;
 	position: absolute;
-	//height: 360px;
 	height: 310px;
 	width: 100%;
 	top: 190px;
 	background: black;
-	border-radius: 10px;
 	text-align: center;
 	.ques {
 		text-align: left;
-
 	}
-
 	.ans {
 		margin-top: 50px;
-		text-align: center;
 	}
 	.ans:before {
 		content: "The correct answer is: ";
@@ -98,24 +95,18 @@ body {
     $darker: darken($button-color, 30%);
 	$lighter: lighten($button-color, 30%);
     @include button-grad( top, $lighter, $darker );
-     
-    -webkit-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-     
+	@include border-radius-mixin (25px);
+
 	&:hover {
 	    background: $accent-color;
 	    $darker: darken($accent-color, 30%);
 		$lighter: lighten($accent-color, 20%);
     	@include button-grad( top, $lighter, $darker );
 	}
-
 }
  
 .restart-button {
 	display: none;
-	text-align: center;
 	position: absolute;
     bottom: 50px;
 }
@@ -124,18 +115,17 @@ body {
 .quiz-progress {
 	padding-top: 18px;
 }
+.num-correct {
+	@extend .quiz-progress;
+	text-align: right;
+}
+
 .question-result {
 	text-align: center;
 	padding-top: 8px;
 	color: white;
 	font: bold $text-size $text-font;
 }
-.num-correct {
-	@extend .quiz-progress;
-	text-align: right;
-}
-
-
 
 
 /* For the GRID SYSTEM */
@@ -149,10 +139,6 @@ body {
     padding-left: $content-margin;
     padding-right: $content-margin;
 }
-
-// .last {
-//     margin-right: 0 !important;
-// }
 
 .column-33 {
     width: 33%;   
@@ -174,8 +160,4 @@ body {
 .put-at-bottom {
     position: absolute;
     bottom: 10px;
-}
-
-.non-hidden-overflow {
-    overflow: visible; 
 }

@@ -1,12 +1,12 @@
 /* apply a natural box layout model to all elements */
-/* line 20, ../sass/main.scss */
+/* line 25, ../sass/main.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 27, ../sass/main.scss */
+/* line 31, ../sass/main.scss */
 body {
   width: 600px;
   margin: 0 auto;
@@ -16,31 +16,37 @@ body {
   font-family: Helvetica;
 }
 
-/* line 38, ../sass/main.scss */
+/* line 40, ../sass/main.scss */
 .quiz-box {
   margin: 50px auto;
   width: 500px;
   height: 550px;
   background: black;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
   border-radius: 10px;
   position: relative;
 }
 
-/* line 47, ../sass/main.scss */
+/* line 49, ../sass/main.scss */
 .title img {
   display: block;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  -moz-border-radius: 10px;
   border-radius: 10px;
   width: 500px;
 }
 
-/* line 53, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
 .question, .correct-answer {
   height: 2.6em;
   font-size: 1.5em;
   padding: 10px;
 }
 
-/* line 59, ../sass/main.scss */
+/* line 61, ../sass/main.scss */
 .correct-answer {
   display: none;
   position: absolute;
@@ -48,24 +54,22 @@ body {
   width: 100%;
   top: 190px;
   background: black;
-  border-radius: 10px;
   text-align: center;
 }
 /* line 70, ../sass/main.scss */
 .correct-answer .ques {
   text-align: left;
 }
-/* line 75, ../sass/main.scss */
+/* line 73, ../sass/main.scss */
 .correct-answer .ans {
   margin-top: 50px;
-  text-align: center;
 }
-/* line 79, ../sass/main.scss */
+/* line 76, ../sass/main.scss */
 .correct-answer .ans:before {
   content: "The correct answer is: ";
 }
 
-/* line 85, ../sass/main.scss */
+/* line 82, ../sass/main.scss */
 .button {
   display: inline-block;
   text-decoration: none;
@@ -82,12 +86,12 @@ body {
   background: -o-linear-gradient(top, #9dbce0, #122439);
   background: -ms-linear-gradient(top, #9dbce0, #122439);
   background: linear-gradient(top, #9dbce0, #122439);
-  -webkit-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 25px;
+  -khtml-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
 }
-/* line 107, ../sass/main.scss */
+/* line 100, ../sass/main.scss */
 .button:hover {
   background: #5f4a8f;
   background: -webkit-linear-gradient(top, #9481be, #1c162a);
@@ -97,20 +101,24 @@ body {
   background: linear-gradient(top, #9481be, #1c162a);
 }
 
-/* line 116, ../sass/main.scss */
+/* line 108, ../sass/main.scss */
 .restart-button {
   display: none;
-  text-align: center;
   position: absolute;
   bottom: 50px;
 }
 
-/* line 124, ../sass/main.scss */
+/* line 115, ../sass/main.scss */
 .quiz-progress, .num-correct {
   padding-top: 18px;
 }
 
-/* line 127, ../sass/main.scss */
+/* line 118, ../sass/main.scss */
+.num-correct {
+  text-align: right;
+}
+
+/* line 123, ../sass/main.scss */
 .question-result {
   text-align: center;
   padding-top: 8px;
@@ -118,53 +126,43 @@ body {
   font: bold 1.5em "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
-/* line 133, ../sass/main.scss */
-.num-correct {
-  text-align: right;
-}
-
 /* For the GRID SYSTEM */
-/* line 142, ../sass/main.scss */
+/* line 132, ../sass/main.scss */
 .container {
   width: 500px;
   overflow: hidden;
 }
 
-/* line 147, ../sass/main.scss */
+/* line 137, ../sass/main.scss */
 .column {
   float: left;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* line 157, ../sass/main.scss */
+/* line 143, ../sass/main.scss */
 .column-33 {
   width: 33%;
 }
 
-/* line 161, ../sass/main.scss */
+/* line 147, ../sass/main.scss */
 .column-50 {
   width: 49.5%;
 }
 
-/* line 165, ../sass/main.scss */
+/* line 151, ../sass/main.scss */
 .column-66 {
   width: 66%;
 }
 
-/* line 169, ../sass/main.scss */
+/* line 155, ../sass/main.scss */
 .column-100 {
   margin-right: 0 !important;
   width: 100%;
 }
 
-/* line 174, ../sass/main.scss */
+/* line 160, ../sass/main.scss */
 .put-at-bottom {
   position: absolute;
   bottom: 10px;
-}
-
-/* line 179, ../sass/main.scss */
-.non-hidden-overflow {
-  overflow: visible;
 }
