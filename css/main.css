@@ -21,49 +21,49 @@ body {
 
 /* line 42, ../sass/main.scss */
 .quiz-wrapper {
-  width: 600px;
+  width: 36.3em;
   margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 20px;
+  padding-top: 3.4em;
+  padding-bottom: 2em;
 }
 
 /* line 49, ../sass/main.scss */
 .quiz-box {
   margin: 0 auto;
-  width: 500px;
-  height: 550px;
+  width: 31.3em;
+  height: 35em;
   background: black;
-  -webkit-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 0.8em;
+  -khtml-border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  border-radius: 0.8em;
   position: relative;
 }
 
 /* line 58, ../sass/main.scss */
 .title img {
   display: block;
-  -webkit-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  width: 500px;
+  -webkit-border-radius: 0.8em;
+  -khtml-border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  border-radius: 0.8em;
+  width: 31.3em;
 }
 
 /* line 64, ../sass/main.scss */
 .question, .correct-answer {
-  height: 2.6em;
+  height: 2.5em;
   font-size: 1.5em;
-  padding: 10px;
+  padding: 0.4em;
 }
 
 /* line 70, ../sass/main.scss */
 .correct-answer {
   display: none;
   position: absolute;
-  height: 310px;
+  height: 13em;
   width: 100%;
-  top: 190px;
+  top: 7.95em;
   background: black;
   text-align: center;
 }
@@ -73,7 +73,7 @@ body {
 }
 /* line 82, ../sass/main.scss */
 .correct-answer .ans {
-  margin-top: 50px;
+  margin-top: 2em;
 }
 /* line 85, ../sass/main.scss */
 .correct-answer .ans:before {
@@ -82,12 +82,11 @@ body {
 
 /* line 90, ../sass/main.scss */
 .button {
-  display: inline-block;
+  display: block;
   text-decoration: none;
-  width: 480px;
-  margin: 5px 10px;
-  padding: 14px;
-  line-height: 50px;
+  width: 25.3em;
+  margin: .6em auto;
+  padding: .7em;
   color: black;
   text-align: center;
   font: bold 1.2em "Helvetica Neue", Helvetica, Geneva, sans-serif;
@@ -97,12 +96,12 @@ body {
   background: -o-linear-gradient(top, #9dbce0, #122439);
   background: -ms-linear-gradient(top, #9dbce0, #122439);
   background: linear-gradient(top, #9dbce0, #122439);
-  -webkit-border-radius: 25px;
-  -khtml-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
+  -webkit-border-radius: 2em;
+  -khtml-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
 }
-/* line 108, ../sass/main.scss */
+/* line 107, ../sass/main.scss */
 .button:hover {
   background: #5f4a8f;
   background: -webkit-linear-gradient(top, #9481be, #1c162a);
@@ -112,16 +111,17 @@ body {
   background: linear-gradient(top, #9481be, #1c162a);
 }
 
-/* line 116, ../sass/main.scss */
+/* line 115, ../sass/main.scss */
 .restart-button {
   display: none;
   position: absolute;
-  bottom: 50px;
+  bottom: 3.5em;
+  margin: 0 .4em;
 }
 
 /* line 121, ../sass/main.scss */
 .quiz-progress, .num-correct {
-  padding-top: 18px;
+  padding-top: 1.4em;
 }
 
 /* line 124, ../sass/main.scss */
@@ -132,7 +132,7 @@ body {
 /* line 128, ../sass/main.scss */
 .question-result {
   text-align: center;
-  padding-top: 8px;
+  padding-top: .6em;
   color: white;
   font: bold 1.5em "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
@@ -162,21 +162,21 @@ footer {
   font: 1em "Helvetica Neue", Helvetica, Geneva, sans-serif;
   text-align: right;
   background: black;
-  padding: 5px;
+  padding: .2em;
 }
 
 /* For the GRID SYSTEM */
 /* line 159, ../sass/main.scss */
 .container {
-  width: 500px;
+  width: 31.3em;
   overflow: hidden;
 }
 
 /* line 164, ../sass/main.scss */
 .column {
   float: left;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
 }
 
 /* line 170, ../sass/main.scss */
@@ -202,5 +202,5 @@ footer {
 /* line 187, ../sass/main.scss */
 .put-at-bottom {
   position: absolute;
-  bottom: 10px;
+  bottom: .7em;
 }

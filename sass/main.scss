@@ -1,5 +1,5 @@
-$content-width: 500px;	// the width of the quiz area
-$content-margin: 10px;	// standard white space around content in quiz area
+$content-width: 31.3em;	// the width of the quiz area
+$content-margin: .4em;	// standard white space around content in quiz area
 $button-color: #366dae;	// slightly different base color for buttons
 $accent-color: #5f4a8f;	// accent color for hovering
 $base-color: #5a91cc;	// base text color
@@ -40,29 +40,29 @@ body {
 }
 
 .quiz-wrapper {
-	width: $content-width + 100px;
+	width: $content-width + 5em;
 	margin: 0 auto;
-	padding-top: 50px;
-	padding-bottom: 20px;
+	padding-top: 3.4em;
+	padding-bottom: 2em;
 }
 
 .quiz-box {
 	margin: 0 auto;
 	width: $content-width;
-	height: 550px;
+	height: 35em;
 	background: black;
-	@include border-radius-mixin (10px);
+	@include border-radius-mixin (.8em);
     position: relative;
 }
 
 .title img {
 	display: block;
-	@include border-radius-mixin (10px);
+	@include border-radius-mixin (.8em);
 	width: $content-width;
 }
 
 .question {
-	height: 2.6em;
+	height: 2.5em;
 	font-size: $text-size;
 	padding: $content-margin;
 }
@@ -71,16 +71,16 @@ body {
 	@extend .question;
 	display: none;
 	position: absolute;
-	height: 310px;
+	height: 13em;
 	width: 100%;
-	top: 190px;
+	top: 7.95em;
 	background: black;
 	text-align: center;
 	.ques {
 		text-align: left;
 	}
 	.ans {
-		margin-top: 50px;
+		margin-top: 2em;
 	}
 	.ans:before {
 		content: "The correct answer is: ";
@@ -88,13 +88,12 @@ body {
 }
 
 .button {
-    display: inline-block;
+    display: block;
 	text-decoration: none;
-    //height: 50px;
-	width: ($content-width - $content-margin*2);
-	margin: 5px $content-margin;
-    padding: 14px;
-	line-height: 50px;
+	//width: ($content-width - $content-margin*2);
+	width: ($content-width - 6em);
+	margin: .6em auto;
+    padding: .7em;
     color: black;
     text-align: center;
     font: bold ($text-size - .3em) $text-font;
@@ -103,7 +102,7 @@ body {
     $darker: darken($button-color, 30%);
 	$lighter: lighten($button-color, 30%);
     @include button-grad( top, $lighter, $darker );
-	@include border-radius-mixin (25px);
+	@include border-radius-mixin (2em);
 
 	&:hover {
 	    background: $accent-color;
@@ -116,10 +115,11 @@ body {
 .restart-button {
 	display: none;
 	position: absolute;
-    bottom: 50px;
+    bottom: 3.5em;
+    margin: 0 .4em;
 }
 .quiz-progress {
-	padding-top: 18px;
+	padding-top: 1.4em;
 }
 .num-correct {
 	@extend .quiz-progress;
@@ -127,7 +127,7 @@ body {
 }
 .question-result {
 	text-align: center;
-	padding-top: 8px;
+	padding-top: .6em;
 	color: white;
 	font: bold $text-size $text-font;
 }
@@ -151,7 +151,7 @@ footer {
 	font: 1em $text-font;
 	text-align: right;
 	background: black;
-	padding: 5px;
+	padding: .2em;
 }
 
 
@@ -186,5 +186,5 @@ footer {
 
 .put-at-bottom {
     position: absolute;
-    bottom: 10px;
+    bottom: .7em;
 }
