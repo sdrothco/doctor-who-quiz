@@ -6,20 +6,22 @@ $(document).ready(function(){
 	startNewQuiz();
 
 	// Clicked an answer button, process answer
-	$(".answers a").click(function(){
+	$(".answers a").click(function(e){
 
 		quiz.checkAnswer($(this).data("buttonnum"));
 		quiz.displayNextQuestion();
+		e.preventDefault();
 	});
 
 	// Clicked the restart button, start a new quiz
-	$(".restart-button").click(function(){
+	$(".restart-button").click(function(e){
 
 		$(this).hide();
 		$('.answers, .quiz-status').show();
 		$('.question-result').css('visibility', 'hidden');
 
 		startNewQuiz();
+		e.preventDefault();
 	});
 
 	// Reset everything and start a new quiz.
@@ -49,7 +51,6 @@ $(document).ready(function(){
 		questionArr.push( new Question( "Which of these has the Doctor used his sonic screwdriver for?",
 				["Medical diagnostics and repair of organic parts", "Creating a spark to light a candle",
 				"Pushing heavy objects", "All of the above"], 3) );
-
 		//console.log(questionArr);
 	}
 });
@@ -125,10 +126,24 @@ function Quiz ( questionArr ) {
 
 	// The user has reached the end of the quiz, so display how they did.
 	this.displayQuizResults = function () {
+		var rating = "";
+		if (this.numCorrect >= 7 ) {
+			rating = "Time Lord";
+		} else if (this.numCorrect >= 5) {
+			rating = "River Song";
+		} else if (this.numCorrect >= 3) {
+			rating = "Amy Pond";
+		} else if (this.numCorrect >= 1) {
+			rating = "Mickey Smith";
+		} else  {
+			rating = "A Dalek";
+		}
+
 		$('.answers').hide();
-		$('.question').text("Congratulations on completing the quiz!\n\n"
+		$('.question').html("Congratulations on completing the quiz!<br/><br/>"
 			+ "You correctly answered " + this.numCorrect 
-			+ " out of " + this.questions.length + " questions.");
+			+ " out of " + this.questions.length + " questions.<br/><br/>"
+			+ "Your rating: " + rating);
 		$('.restart-button').show();
 	};
 }

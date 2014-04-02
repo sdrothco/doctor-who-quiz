@@ -28,18 +28,26 @@ $text-font: "Helvetica Neue", Helvetica, Geneva, sans-serif; // base font
     box-sizing: border-box;
  }
 
+html, body {
+	height: 100%;
+}
+
 body {
-	width: $content-width + 100px;
-	margin: 0 auto;
-	min-height: 600px;
     background: url(../images/tardis_wallpaper_by_spruffen.jpg) no-repeat fixed top center #fff;
 	background-size: cover;
     color: $base-color;
-    font-family: Helvetica;
+    font-family: $text-font;
+}
+
+.quiz-wrapper {
+	width: $content-width + 100px;
+	margin: 0 auto;
+	padding-top: 50px;
+	padding-bottom: 20px;
 }
 
 .quiz-box {
-	margin: 50px auto;
+	margin: 0 auto;
 	width: $content-width;
 	height: 550px;
 	background: black;
@@ -79,15 +87,14 @@ body {
 	}
 }
 
-
 .button {
     display: inline-block;
 	text-decoration: none;
-    height: 50px;
+    //height: 50px;
 	width: ($content-width - $content-margin*2);
 	margin: 5px $content-margin;
-    padding: $content-margin;
-
+    padding: 14px;
+	line-height: 50px;
     color: black;
     text-align: center;
     font: bold ($text-size - .3em) $text-font;
@@ -111,8 +118,6 @@ body {
 	position: absolute;
     bottom: 50px;
 }
-
-
 .quiz-progress {
 	padding-top: 18px;
 }
@@ -120,7 +125,6 @@ body {
 	@extend .quiz-progress;
 	text-align: right;
 }
-
 .question-result {
 	text-align: center;
 	padding-top: 8px;
@@ -129,24 +133,26 @@ body {
 }
 
 
+/* For sticky footer */
+section {
+	min-height: 100%;
+	margin-bottom: -25px;
+}
+section:after {
+  content: "";
+  display: block;
+}
+footer, section:after {
+  /* .push must be the same height as footer */
+	height: 25px; 
+}
 footer {
-	width: $content-width;
-	margin: 0 50px;
-
+	line-height: 25px;
 	font: 1em $text-font;
-	color: white;
+	text-align: right;
 	background: black;
 	padding: 5px;
-	@include border-radius-mixin (25px);
-	
-	text-align: center;
-
-	position: absolute;
-	bottom: 10px;
-	//left: 10px;
-	
 }
-
 
 
 /* For the GRID SYSTEM */
@@ -182,4 +188,3 @@ footer {
     position: absolute;
     bottom: 10px;
 }
-
