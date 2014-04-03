@@ -34,6 +34,13 @@ html, body {
 
 body {
     background: url(../images/tardis_wallpaper_by_spruffen.jpg) no-repeat fixed top center #fff;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-size: cover;
     color: $base-color;
     font-family: $text-font;

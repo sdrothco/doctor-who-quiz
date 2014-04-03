@@ -14,12 +14,19 @@ html, body {
 /* line 35, ../sass/main.scss */
 body {
   background: url(../images/tardis_wallpaper_by_spruffen.jpg) no-repeat fixed top center white;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   color: #5a91cc;
   font-family: "Helvetica Neue", Helvetica, Geneva, sans-serif;
 }
 
-/* line 42, ../sass/main.scss */
+/* line 49, ../sass/main.scss */
 .quiz-wrapper {
   width: 36.3em;
   margin: 0 auto;
@@ -27,7 +34,7 @@ body {
   padding-bottom: 2em;
 }
 
-/* line 49, ../sass/main.scss */
+/* line 56, ../sass/main.scss */
 .quiz-box {
   margin: 0 auto;
   width: 31.3em;
@@ -40,7 +47,7 @@ body {
   position: relative;
 }
 
-/* line 58, ../sass/main.scss */
+/* line 65, ../sass/main.scss */
 .title img {
   display: block;
   -webkit-border-radius: 0.8em;
@@ -50,14 +57,14 @@ body {
   width: 31.3em;
 }
 
-/* line 64, ../sass/main.scss */
+/* line 71, ../sass/main.scss */
 .question, .correct-answer {
   height: 2.5em;
   font-size: 1.5em;
   padding: 0.4em;
 }
 
-/* line 70, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 .correct-answer {
   display: none;
   position: absolute;
@@ -67,20 +74,20 @@ body {
   background: black;
   text-align: center;
 }
-/* line 79, ../sass/main.scss */
+/* line 86, ../sass/main.scss */
 .correct-answer .ques {
   text-align: left;
 }
-/* line 82, ../sass/main.scss */
+/* line 89, ../sass/main.scss */
 .correct-answer .ans {
   margin-top: 2em;
 }
-/* line 85, ../sass/main.scss */
+/* line 92, ../sass/main.scss */
 .correct-answer .ans:before {
   content: "The correct answer is: ";
 }
 
-/* line 90, ../sass/main.scss */
+/* line 97, ../sass/main.scss */
 .button {
   display: block;
   text-decoration: none;
@@ -101,7 +108,7 @@ body {
   -moz-border-radius: 2em;
   border-radius: 2em;
 }
-/* line 107, ../sass/main.scss */
+/* line 114, ../sass/main.scss */
 .button:hover {
   background: #5f4a8f;
   background: -webkit-linear-gradient(top, #9481be, #1c162a);
@@ -111,7 +118,7 @@ body {
   background: linear-gradient(top, #9481be, #1c162a);
 }
 
-/* line 115, ../sass/main.scss */
+/* line 122, ../sass/main.scss */
 .restart-button {
   display: none;
   position: absolute;
@@ -119,17 +126,17 @@ body {
   margin: 0 .4em;
 }
 
-/* line 121, ../sass/main.scss */
+/* line 128, ../sass/main.scss */
 .quiz-progress, .num-correct {
   padding-top: 1.4em;
 }
 
-/* line 124, ../sass/main.scss */
+/* line 131, ../sass/main.scss */
 .num-correct {
   text-align: right;
 }
 
-/* line 128, ../sass/main.scss */
+/* line 135, ../sass/main.scss */
 .question-result {
   text-align: center;
   padding-top: .6em;
@@ -138,25 +145,25 @@ body {
 }
 
 /* For sticky footer */
-/* line 137, ../sass/main.scss */
+/* line 144, ../sass/main.scss */
 section {
   min-height: 100%;
   margin-bottom: -25px;
 }
 
-/* line 141, ../sass/main.scss */
+/* line 148, ../sass/main.scss */
 section:after {
   content: "";
   display: block;
 }
 
-/* line 145, ../sass/main.scss */
+/* line 152, ../sass/main.scss */
 footer, section:after {
   /* .push must be the same height as footer */
   height: 25px;
 }
 
-/* line 149, ../sass/main.scss */
+/* line 156, ../sass/main.scss */
 footer {
   line-height: 25px;
   font: 1em "Helvetica Neue", Helvetica, Geneva, sans-serif;
@@ -166,40 +173,40 @@ footer {
 }
 
 /* For the GRID SYSTEM */
-/* line 159, ../sass/main.scss */
+/* line 166, ../sass/main.scss */
 .container {
   width: 31.3em;
   overflow: hidden;
 }
 
-/* line 164, ../sass/main.scss */
+/* line 171, ../sass/main.scss */
 .column {
   float: left;
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
 
-/* line 170, ../sass/main.scss */
+/* line 177, ../sass/main.scss */
 .column-33 {
   width: 33%;
 }
 
-/* line 174, ../sass/main.scss */
+/* line 181, ../sass/main.scss */
 .column-50 {
   width: 49.5%;
 }
 
-/* line 178, ../sass/main.scss */
+/* line 185, ../sass/main.scss */
 .column-66 {
   width: 66%;
 }
 
-/* line 182, ../sass/main.scss */
+/* line 189, ../sass/main.scss */
 .column-100 {
   width: 100%;
 }
 
-/* line 187, ../sass/main.scss */
+/* line 194, ../sass/main.scss */
 .put-at-bottom {
   position: absolute;
   bottom: .7em;
