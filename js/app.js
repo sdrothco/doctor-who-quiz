@@ -1,3 +1,31 @@
+var myQs = [
+		{	q: "Which of the following is NOT an enemy of the Doctor?",
+			a: ["The Master", "Cybermen", "The Silence", "The Face of Boe"],
+			correctA: 3 },
+		{	q: "Which of the following is the Doctor’s home planet?",
+			a: ["Skaro", "Raxacoricofallapatorius", "Gallifrey", "Earth"],
+			correctA: 2 },
+		{	q: "What is the Doctor called by the Daleks on their home planet?",
+			a: ["The Oncoming Storm", "The Destroyer of Daleks", "The Time Lord Warrior", "Death"],
+			correctA: 0 },
+		{	q: "Who is known for saying \"Hello Sweetie\"?",
+			a: ["Rose Tyler", "Donna Noble", "Amy Pond", "River Song"],
+			correctA: 3 },
+		{	q: "What does the eleventh Doctor say are cool?",
+			a: ["Fezzes", "Stetsons", "Bow ties", "All of the above"],
+			correctA: 3 },
+		{	q: "Amy Pond is known as?",
+			a: ["The girl who played with fire", "The clever girl", "The girl who waited", "The impossible girl"],
+			correctA: 2 },
+		{	q: "What device in the TARDIS is broken that keeps it looking like a Police Box?",
+			a: ["Chameleon circuit", "Cloaking device", "Disguise system", "None of the above"],
+			correctA: 0 },
+		{	q: "Which of these has the Doctor used his sonic screwdriver for?",
+			a: ["Medical diagnostics and repair of organic parts", "Creating a spark to light a candle",
+				"Pushing heavy objects", "All of the above"],
+			correctA: 3 }
+		];
+
 $(document).ready(function(){
 	var quiz;
 	var questionArr = [];
@@ -33,28 +61,13 @@ $(document).ready(function(){
 
 	// Only load the questions into the objects once to improve performance.
 	function loadQuestions() {
-		questionArr.push( new Question( "Which of the following is NOT an enemy of the Doctor?",
-				["The Master", "Cybermen", "The Silence", "The Face of Boe"], 3) );
-		questionArr.push( new Question( "Which of the following is the Doctor’s home planet?",
-				["Skaro", "Raxacoricofallapatorius", "Gallifrey", "Earth"], 2) );
-		questionArr.push( new Question( "What is the Doctor called by the Daleks on their home planet?",
-				["The Oncoming Storm", "The Destroyer of Daleks", "The Time Lord Warrior", "Death"], 0) );
-		questionArr.push( new Question( "Who is known for saying \"Hello Sweetie\"?",
-				["Rose Tyler", "Donna Noble", "Amy Pond", "River Song"], 3) );
-		questionArr.push( new Question( "What does the eleventh Doctor say are cool?",
-				["Fezzes", "Stetsons", "Bow ties", "All of the above"], 3) );
-		questionArr.push( new Question( "Amy Pond is known as?",
-				["The girl who played with fire", "The clever girl", "The girl who waited",
-				"The impossible girl"], 2) );
-		questionArr.push( new Question( "What device in the TARDIS is broken that keeps it looking like a Police Box?",
-				["Chameleon circuit", "Cloaking device", "Disguise system", "None of the above"], 0) );
-		questionArr.push( new Question( "Which of these has the Doctor used his sonic screwdriver for?",
-				["Medical diagnostics and repair of organic parts", "Creating a spark to light a candle",
-				"Pushing heavy objects", "All of the above"], 3) );
+
+		for ( var i=0; i < myQs.length; i++ ) {
+			questionArr.push( new Question( myQs[i].q, myQs[i].a, myQs[i].correctA ) );
+		}
 		//console.log(questionArr);
 	}
 });
-
 
 
 // The Quiz object keeps the list of Questions, the current location in that 
@@ -175,3 +188,5 @@ function Question ( questionStr, answersArr, correctAnswerIdx ) {
 		return false;
 	};
 }
+
+
