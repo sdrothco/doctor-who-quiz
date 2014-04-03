@@ -33,7 +33,7 @@ html, body {
 }
 
 body {
-    background: url(../images/tardis_wallpaper_by_spruffen.jpg) no-repeat fixed top center #fff;
+    background: url(../images/tardis_wallpaper_by_spruffen.jpg) no-repeat fixed top center #000;
 	-webkit-background-size: 100%;
 	-moz-background-size: 100%;
 	-o-background-size: 100%;
@@ -159,6 +159,7 @@ footer {
 	text-align: right;
 	background: black;
 	padding: .2em;
+	width: 100%;
 }
 
 

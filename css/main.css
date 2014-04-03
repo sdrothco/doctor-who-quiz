@@ -13,7 +13,7 @@ html, body {
 
 /* line 35, ../sass/main.scss */
 body {
-  background: url(../images/tardis_wallpaper_by_spruffen.jpg) no-repeat fixed top center white;
+  background: url(../images/tardis_wallpaper_by_spruffen.jpg) no-repeat fixed top center black;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;
@@ -170,43 +170,44 @@ footer {
   text-align: right;
   background: black;
   padding: .2em;
+  width: 100%;
 }
 
 /* For the GRID SYSTEM */
-/* line 166, ../sass/main.scss */
+/* line 167, ../sass/main.scss */
 .container {
   width: 31.3em;
   overflow: hidden;
 }
 
-/* line 171, ../sass/main.scss */
+/* line 172, ../sass/main.scss */
 .column {
   float: left;
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
 
-/* line 177, ../sass/main.scss */
+/* line 178, ../sass/main.scss */
 .column-33 {
   width: 33%;
 }
 
-/* line 181, ../sass/main.scss */
+/* line 182, ../sass/main.scss */
 .column-50 {
   width: 49.5%;
 }
 
-/* line 185, ../sass/main.scss */
+/* line 186, ../sass/main.scss */
 .column-66 {
   width: 66%;
 }
 
-/* line 189, ../sass/main.scss */
+/* line 190, ../sass/main.scss */
 .column-100 {
   width: 100%;
 }
 
-/* line 194, ../sass/main.scss */
+/* line 195, ../sass/main.scss */
 .put-at-bottom {
   position: absolute;
   bottom: .7em;
